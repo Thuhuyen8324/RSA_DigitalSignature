@@ -97,25 +97,24 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
 
 Dưới đây là sơ đồ minh họa cách các thành phần chính của ứng dụng tương tác với nhau.
 
-```mermaid
 graph TD
     A[Người dùng] --> B(Trình duyệt Web);
     B --> |Yêu cầu HTTP/S| C(Ứng dụng Flask);
 
     subgraph Server Side (digital_signature.py)
-        C --&gt; D[RSA Key Management]
-        D --&gt; E[Chức năng ký số];
-        D --&gt; F[Chức năng xác minh chữ ký];
-        E --&gt; G(signed_files/);
-        F --&gt; G;
-        C --&gt; H[Flask-SocketIO Server];
-        H --&gt; I[Logic Chat Room];
-        I --&gt; J[Database (Tùy chọn cho dữ liệu lớn hơn)];
+        C --- D[RSA Key Management]
+        D --- E[Chức năng ký số];
+        D --- F[Chức năng xác minh chữ ký];
+        E --- G(signed_files/);
+        F --- G;
+        C --- H[Flask-SocketIO Server];
+        H --- I[Logic Chat Room];
+        I --- J[Database (Tùy chọn cho dữ liệu lớn hơn)];
     end
 
-    G --&gt; K[Tải xuống file];
-    I --&gt; B; % SocketIO realtime updates to browser
-    J --&gt; I;
+    G --- K[Tải xuống file];
+    I --- B; % SocketIO realtime updates to browser
+    J --- I;
     B --> |File gốc & Chữ ký| E;
     B --> |File gốc & Chữ ký| F;
     F --> |Thông báo file đã xác minh| H;
