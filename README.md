@@ -97,37 +97,12 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
 
 Dưới đây là sơ đồ minh họa cách các thành phần chính của ứng dụng tương tác với nhau.
 
-graph TD
-    A[Người dùng] --> B(Trình duyệt Web);
-    B --> |Yêu cầu HTTP/S| C(Ứng dụng Flask);
-
-    subgraph Server Side (digital_signature.py)
-        C --- D[RSA Key Management]
-        D --- E[Chức năng ký số];
-        D --- F[Chức năng xác minh chữ ký];
-        E --- G(signed_files/);
-        F --- G;
-        C --- H[Flask-SocketIO Server];
-        H --- I[Logic Chat Room];
-        I --- J[Database (Tùy chọn cho dữ liệu lớn hơn)];
-    end
-
-    G --- K[Tải xuống file];
-    I --- B; % SocketIO realtime updates to browser
-    J --- I;
-    B --> |File gốc & Chữ ký| E;
-    B --> |File gốc & Chữ ký| F;
-    F --> |Thông báo file đã xác minh| H;
-    H --> B; % Thông báo file đến trình duyệt qua socket
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px;
-    style B fill:#bbf,stroke:#333,stroke-width:2px;
-    style C fill:#ccf,stroke:#333,stroke-width:2px;
-    style D fill:#ddf,stroke:#333,stroke-width:2px;
-    style E fill:#ddf,stroke:#333,stroke-width:2px;
-    style F fill:#ddf,stroke:#333,stroke-width:2px;
-    style G fill:#fdd,stroke:#333,stroke-width:2px;
-    style H fill:#ccf,stroke:#333,stroke-width:2px;
-    style I fill:#ddf,stroke:#333,stroke-width:2px;
-    style J fill:#fcc,stroke:#333,stroke-width:2px;
-    style K fill:#bbf,stroke:#333,stroke-width:2px;
+├── digital_signature.py   # Code chính của ứng dụng Flask và SocketIO
+├── templates/             # Chứa các file HTML (index.html, chat.html)
+│   ├── index.html
+│   └── chat.html
+├── signed_files/          # Thư mục chứa các khóa và file đã ký
+│   ├── private.pem        # Khóa riêng tư (KHÔNG NÊN chia sẻ)
+│   ├── public.pem         # Khóa công khai
+│   └── (các file đã ký và chữ ký .sig)
+└── requirements.txt       # Danh sách các thư viện Python cần thiết
