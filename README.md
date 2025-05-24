@@ -107,11 +107,9 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
     ```
     Ứng dụng đang chạy trên các địa chỉ sau:
     ----------------------------------------------------
-    1. Trang chính (truy cập từ máy cục bộ): [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
-    2. Phòng Chat (truy cập từ máy cục bộ): [http://127.0.0.1:5000/chat](http://127.0.0.1:5000/chat)
-    ----------------------------------------------------
-    3. Trang chính (chia sẻ trong mạng LAN): http://<YOUR_LOCAL_IP>:5000/
-    4. Phòng Chat (chia sẻ trong mạng LAN): http://<YOUR_LOCAL_IP>:5000/chat
+    1. Trang chính  [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+    2. Phòng Chat  [http://127.0.0.1:5000/chat](http://127.0.0.1:5000/chat)
+   
     ----------------------------------------------------
     Chú ý: Giữ Ctrl và click vào link trong terminal để mở.
     ```
