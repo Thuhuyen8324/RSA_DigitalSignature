@@ -95,11 +95,11 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
 <table align="center">
   <tr>
     <td align="center">
-      <img src="main.jpg" alt="màn hình điền thông tin" width="30%"><br>
+      <img src="server.jpg" alt="màn hình điền thông tin" width="30%"><br>
       <strong>Màn hình nhập thông tin</strong>
     </td>
     <td align="center">
-      <img src="ketqua.jpg" alt="Kết quả tính toán" width="30%"><br>
+      <img src="chat.jpg" alt="Kết quả tính toán" width="30%"><br>
       <strong>Màn hình kết quả tính toán</strong>
     </td>
   </tr>
