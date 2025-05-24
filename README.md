@@ -90,5 +90,18 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
     *(Thay `<YOUR_LOCAL_IP>` bằng địa chỉ IP cục bộ thực tế của máy tính bạn, ví dụ: `192.168.1.20`.)*
 3.  **Để truy cập giao diện:**
     * **Trên máy tính của bạn:** Giữ `Ctrl` (hoặc `Cmd` trên macOS) và nhấp vào `http://127.0.0.1:5000/` để mở trang chính, hoặc `http://127.0.0.1:5000/chat` để mở phòng chat.
-   
+   <h2 align="center">📸 Kết quả hiển thị</h2>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="main.jpg" alt="màn hình điền thông tin" width="30%"><br>
+      <strong>Màn hình nhập thông tin</strong>
+    </td>
+    <td align="center">
+      <img src="ketqua.jpg" alt="Kết quả tính toán" width="30%"><br>
+      <strong>Màn hình kết quả tính toán</strong>
+    </td>
+  </tr>
+</table>
 
