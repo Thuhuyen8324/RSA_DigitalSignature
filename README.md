@@ -73,12 +73,11 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
 
 ### Chạy ứng dụng
 
-1.  Đảm bảo bạn đã kích hoạt môi trường ảo.
-2.  Chạy file `digital_signature.py`:
+1.  Chạy file `digital_signature.py`:
     ```bash
     python digital_signature.py
     ```
-3.  Khi server khởi động, bạn sẽ thấy các đường link trong terminal tương tự như sau:
+2.  Khi server khởi động, bạn sẽ thấy các đường link trong terminal tương tự như sau:
     ```
     Ứng dụng đang chạy trên các địa chỉ sau:
     ----------------------------------------------------
@@ -89,8 +88,47 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
     Chú ý: Giữ Ctrl và click vào link trong terminal để mở.
     ```
     *(Thay `<YOUR_LOCAL_IP>` bằng địa chỉ IP cục bộ thực tế của máy tính bạn, ví dụ: `192.168.1.20`.)*
-4.  **Để truy cập giao diện:**
+3.  **Để truy cập giao diện:**
     * **Trên máy tính của bạn:** Giữ `Ctrl` (hoặc `Cmd` trên macOS) và nhấp vào `http://127.0.0.1:5000/` để mở trang chính, hoặc `http://127.0.0.1:5000/chat` để mở phòng chat.
-    * **Để chia sẻ trong mạng LAN/Wi-Fi:** Gửi đường link `http://<YOUR_LOCAL_IP>:5000/chat` cho những người trong cùng mạng.
+   
 
 ## Cấu trúc dự án
+## Sơ đồ cấu trúc hệ thống
+
+Dưới đây là sơ đồ minh họa cách các thành phần chính của ứng dụng tương tác với nhau.
+
+```mermaid
+graph TD
+    A[Người dùng] --> B(Trình duyệt Web);
+    B --> |Yêu cầu HTTP/S| C(Ứng dụng Flask);
+
+    subgraph Server Side (digital_signature.py)
+        C --&gt; D[RSA Key Management]
+        D --&gt; E[Chức năng ký số];
+        D --&gt; F[Chức năng xác minh chữ ký];
+        E --&gt; G(signed_files/);
+        F --&gt; G;
+        C --&gt; H[Flask-SocketIO Server];
+        H --&gt; I[Logic Chat Room];
+        I --&gt; J[Database (Tùy chọn cho dữ liệu lớn hơn)];
+    end
+
+    G --&gt; K[Tải xuống file];
+    I --&gt; B; % SocketIO realtime updates to browser
+    J --&gt; I;
+    B --> |File gốc & Chữ ký| E;
+    B --> |File gốc & Chữ ký| F;
+    F --> |Thông báo file đã xác minh| H;
+    H --> B; % Thông báo file đến trình duyệt qua socket
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px;
+    style B fill:#bbf,stroke:#333,stroke-width:2px;
+    style C fill:#ccf,stroke:#333,stroke-width:2px;
+    style D fill:#ddf,stroke:#333,stroke-width:2px;
+    style E fill:#ddf,stroke:#333,stroke-width:2px;
+    style F fill:#ddf,stroke:#333,stroke-width:2px;
+    style G fill:#fdd,stroke:#333,stroke-width:2px;
+    style H fill:#ccf,stroke:#333,stroke-width:2px;
+    style I fill:#ddf,stroke:#333,stroke-width:2px;
+    style J fill:#fcc,stroke:#333,stroke-width:2px;
+    style K fill:#bbf,stroke:#333,stroke-width:2px;
