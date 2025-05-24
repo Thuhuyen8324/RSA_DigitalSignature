@@ -92,17 +92,3 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
     * **Trên máy tính của bạn:** Giữ `Ctrl` (hoặc `Cmd` trên macOS) và nhấp vào `http://127.0.0.1:5000/` để mở trang chính, hoặc `http://127.0.0.1:5000/chat` để mở phòng chat.
    
 
-## Cấu trúc dự án
-## Sơ đồ cấu trúc hệ thống
-
-Dưới đây là sơ đồ minh họa cách các thành phần chính của ứng dụng tương tác với nhau.
-
-├── digital_signature.py   # Code chính của ứng dụng Flask và SocketIO
-├── templates/             # Chứa các file HTML (index.html, chat.html)
-│   ├── index.html
-│   └── chat.html
-├── signed_files/          # Thư mục chứa các khóa và file đã ký
-│   ├── private.pem        # Khóa riêng tư (KHÔNG NÊN chia sẻ)
-│   ├── public.pem         # Khóa công khai
-│   └── (các file đã ký và chữ ký .sig)
-└── requirements.txt       # Danh sách các thư viện Python cần thiết
