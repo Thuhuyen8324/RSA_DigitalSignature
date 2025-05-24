@@ -56,34 +56,9 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
 
 ## Cài đặt và Chạy ứng dụng
 
-### Yêu cầu
-
-* Python 3.x
-* `pip` (công cụ quản lý gói của Python)
-
 ### Các bước cài đặt
 
-1.  **Clone repository:**
-    ```bash
-    git clone <URL_TO_YOUR_REPOSITORY>
-    cd DIGITAL_SIGNATURE
-    ```
-    *(Thay `<URL_TO_YOUR_REPOSITORY>` bằng URL thực tế của kho Git của bạn)*
 
-2.  **Tạo môi trường ảo (khuyến nghị):**
-    ```bash
-    python -m venv venv
-    ```
-
-3.  **Kích hoạt môi trường ảo:**
-    * **Trên Windows:**
-        ```bash
-        .\venv\Scripts\activate
-        ```
-    * **Trên macOS/Linux:**
-        ```bash
-        source venv/bin/activate
-        ```
 
 4.  **Cài đặt các thư viện cần thiết:**
     ```bash
