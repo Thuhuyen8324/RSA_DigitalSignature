@@ -1,5 +1,21 @@
 # Digital Signature and Chat Application (Ứng dụng Chữ ký số và Chat)
 
+   <h2 align="center">📸 Kết quả hiển thị</h2>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="server.jpg" alt="màn hình nhập thông tin" width="30%"><br>
+      <strong>Màn hình nhập thông tin</strong>
+    </td>
+    <td align="center">
+      <img src="chat.jpg" alt="Màn hình truyền file trên phòng chat" width="30%"><br>
+      <strong>Màn hình kết quả tính toán</strong>
+    </td>
+  </tr>
+</table>
+
+
 ## Giới thiệu
 
 Đây là một ứng dụng web được phát triển bằng Flask và Flask-SocketIO, tích hợp chức năng ký số file bằng RSA và một phòng chat để chia sẻ file đã ký. Mục tiêu của dự án là minh họa quá trình tạo khóa, ký số, xác minh chữ ký số và chia sẻ an toàn các file thông qua một giao diện web trực quan, đồng thời cung cấp một môi trường chat thời gian thực.
@@ -90,18 +106,4 @@ Trong thế giới số hóa ngày nay, việc đảm bảo tính toàn vẹn (i
     *(Thay `<YOUR_LOCAL_IP>` bằng địa chỉ IP cục bộ thực tế của máy tính bạn, ví dụ: `192.168.1.20`.)*
 3.  **Để truy cập giao diện:**
     * **Trên máy tính của bạn:** Giữ `Ctrl` (hoặc `Cmd` trên macOS) và nhấp vào `http://127.0.0.1:5000/` để mở trang chính, hoặc `http://127.0.0.1:5000/chat` để mở phòng chat.
-   <h2 align="center">📸 Kết quả hiển thị</h2>
-
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="server.jpg" alt="màn hình điền thông tin" width="30%"><br>
-      <strong>Màn hình nhập thông tin</strong>
-    </td>
-    <td align="center">
-      <img src="chat.jpg" alt="Kết quả tính toán" width="30%"><br>
-      <strong>Màn hình kết quả tính toán</strong>
-    </td>
-  </tr>
-</table>
 
