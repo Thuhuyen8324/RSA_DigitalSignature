@@ -5,11 +5,11 @@
 <table align="center">
   <tr>
     <td align="center">
-      <img src="server.jpg" alt="màn hình nhập thông tin" width="30%"><br>
+      <img src="server.jpg" alt="màn hình nhập thông tin" width="600"><br>
       <strong>Màn hình nhập thông tin</strong>
     </td>
     <td align="center">
-      <img src="chat.jpg" alt="Màn hình truyền file trên phòng chat" width="30%"><br>
+      <img src="chat.jpg" alt="Màn hình truyền file trên phòng chat" width="600"><br>
       <strong>Màn hình kết quả tính toán</strong>
     </td>
   </tr>
